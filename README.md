@@ -4,7 +4,7 @@ This nodejs module allows you to quickly and easily search for things via the AP
 
 ```javascript
 var dgSearch  = require('dg-search');
-dgSearch.Images.search({
+dgSearch.Video.search({
   query: 'test',
   affiliate: 'usagov',
   access_key: 'Ab-cdefghijklmnopqrStuVwXYz='
