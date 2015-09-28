@@ -1,4 +1,3 @@
-var url = require('url');
 var request = require('request');
 
 var API_ROOT = 'https://search.usa.gov/api/v2/search';
