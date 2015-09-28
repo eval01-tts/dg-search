@@ -8,8 +8,8 @@ dgSearch.Video.search({
   query: 'test',
   affiliate: 'usagov',
   access_key: 'Ab-cdefghijklmnopqrStuVwXYz='
-}, function(err, results) {
+}, function(err, response) {
   if (err) { return console.error(err); }
-  console.log(results);
+  console.log(response.results);
 });
 ```
