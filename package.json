@@ -1,0 +1,19 @@
+{
+  "name": "dg-search",
+  "version": "0.1.0",
+  "description": "Search using the APIs provided by DigitalGov Search",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "digitalgov",
+    "search",
+    "api"
+  ],
+  "author": "Joshua K. Farrar <joshua@sent1nel.me>",
+  "license": "MIT",
+  "dependencies": {
+    "request": "^2.64.0"
+  }
+}
