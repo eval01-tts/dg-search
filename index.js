@@ -8,17 +8,26 @@ function searchApi(endpoint, qs, cb) {
     url: endpoint,
     qs: qs
   }, function returnResults(err, res, body) {
-    if (err) return cb(err); 
+    if (err) return cb(err);
     else return cb(null, JSON.parse(body));
   });
 };
 
 module.exports = {
+  Azure: {
+    search: function(params, cb) {
+      var url = API_ROOT + '/azure';
+      searchApi(url, params, function(err, res) {
+        if (err) return cb(err);
+        else return cb(null, res);
+      });
+    }
+  },
   Video: {
     search: function(params, cb) {
-      searchApi(API_ROOT + '/video', params, function(err, response) {
+      searchApi(API_ROOT + '/video', params, function(err, res) {
         if (err) return cb(err);
-        else return cb(null, response);
+        else return cb(null, res);
       });
     }
   }
