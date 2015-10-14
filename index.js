@@ -23,6 +23,14 @@ module.exports = {
       });
     }
   },
+  AzureImage: {
+    search: function(params, cb) {
+      searchApi(API_ROOT + '/azure/image', params, function(err, res) {
+        if (err) return cb(err);
+        else return cb(null, res);
+      });
+    }
+  },
   Video: {
     search: function(params, cb) {
       searchApi(API_ROOT + '/video', params, function(err, res) {
