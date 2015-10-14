@@ -1,6 +1,6 @@
 var request = require('request');
 
-var API_ROOT = 'https://search.usa.gov/api/v2/search';
+var API_ROOT = 'https://search-prerelease4.usa.gov/api/v2/search';
 
 function searchApi(endpoint, qs, cb) {
   request({
