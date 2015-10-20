@@ -9,9 +9,20 @@ function searchApi(endpoint, qs, cb) {
     qs: qs
   }, function returnResults(err, res, body) {
     if (err) return cb(err);
-    else return cb(null, JSON.parse(body));
+    else {
+      try {
+        var response = JSON.parse(body);
+        return cb(null, response);
+      } catch (e) {
+        return cb(error(e.message));
+      }
+    }
   });
 };
+
+function error(message) {
+  return "[dg-search error]: " + message;
+}
 
 module.exports = {
   Azure: {
