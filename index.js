@@ -49,5 +49,21 @@ module.exports = {
         else return cb(null, res);
       });
     }
+  },
+  Docs: {
+    search: function(params, cb) {
+      searchApi(API_ROOT + '/docs', params, function(err, res) {
+        if (err) return cb(err);
+        else return cb(null, res);
+      });
+    }
+  },
+  News: {
+    search: function(params, cb) {
+      searchApi(API_ROOT + '/news', params, function(err, res) {
+        if (err) return cb(err);
+        else return cb(null, res);
+      });
+    }
   }
 }
