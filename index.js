@@ -2,6 +2,7 @@ var request = require('request');
 
 API_ROOT = process.env.API_URL
 
+
 function searchApi(endpoint, qs, cb) {
   request({
     method: 'GET',
@@ -12,6 +13,7 @@ function searchApi(endpoint, qs, cb) {
     else {
       try {
         var response = JSON.parse(body);
+
         return cb(null, response);
       } catch (e) {
         return cb(error(e.message));
@@ -27,7 +29,7 @@ function error(message) {
 module.exports = {
   Azure: {
     search: function(params, cb) {
-      var url = API_ROOT + '/azure';
+      var url = API_ROOT + 'v2/search/azure';
       searchApi(url, params, function(err, res) {
         if (err) return cb(err);
         else return cb(null, res);
@@ -36,7 +38,7 @@ module.exports = {
   },
   AzureImage: {
     search: function(params, cb) {
-      searchApi(API_ROOT + '/azure/image', params, function(err, res) {
+      searchApi(API_ROOT + 'v2/search/azure/image', params, function(err, res) {
         if (err) return cb(err);
         else return cb(null, res);
       });
@@ -44,7 +46,7 @@ module.exports = {
   },
   Video: {
     search: function(params, cb) {
-      searchApi(API_ROOT + '/video', params, function(err, res) {
+      searchApi(API_ROOT + 'v2/search/video', params, function(err, res) {
         if (err) return cb(err);
         else return cb(null, res);
       });
@@ -52,7 +54,7 @@ module.exports = {
   },
   Docs: {
     search: function(params, cb) {
-      searchApi(API_ROOT + '/docs', params, function(err, res) {
+      searchApi(API_ROOT + 'v2/search/docs', params, function(err, res) {
         if (err) return cb(err);
         else return cb(null, res);
       });
@@ -60,7 +62,7 @@ module.exports = {
   },
   News: {
     search: function(params, cb) {
-      searchApi(API_ROOT + '/news', params, function(err, res) {
+      searchApi(API_ROOT + 'v2/search/news', params, function(err, res) {
         if (err) return cb(err);
         else return cb(null, res);
       });
