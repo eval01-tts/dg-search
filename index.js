@@ -1,6 +1,6 @@
 var request = require('request');
 
-API_ROOT = process.env.API_URL + "c";
+API_ROOT = process.env.API_URL
 
 function searchApi(endpoint, qs, cb) {
   request({
