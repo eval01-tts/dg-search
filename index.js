@@ -67,5 +67,13 @@ module.exports = {
         else return cb(null, res);
       });
     }
+  },
+  RSS: {
+    search: function(params, cb) {
+      searchApi(API_ROOT + 'c/affiliate/' + params.affiliate + '/rss/' + params.channel, params, function(err, res) {
+        if (err) return cb(err);
+        else return cb(null, res);
+      });
+    }
   }
 }
