@@ -70,7 +70,7 @@ module.exports = {
   },
   RSS: {
     search: function(params, cb) {
-      searchApi(API_ROOT + 'c/affiliate/' + params.affiliate + '/rss/' + params.channel, params, function(err, res) {
+      searchApi(API_ROOT + 'c/search/rss/' + params.channel, params, function(err, res) {
         if (err) return cb(err);
         else return cb(null, res);
       });
