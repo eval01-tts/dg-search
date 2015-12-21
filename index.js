@@ -68,6 +68,14 @@ module.exports = {
       });
     }
   },
+  i14y: {
+    search: function(params, cb) {
+      searchApi(API_ROOT + 'v2/search/i14y', params, function(err, res) {
+        if (err) return cb(err);
+        else return cb(null, res);
+      });
+    }
+  },
   RSS: {
     search: function(params, cb) {
       searchApi(API_ROOT + 'c/search/rss/' + params.channel, params, function(err, res) {
