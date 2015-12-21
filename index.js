@@ -76,6 +76,14 @@ module.exports = {
       });
     }
   },
+  Blended: {
+    search: function(params, cb) {
+      searchApi(API_ROOT + 'v2/search', params, function(err, res) {
+        if (err) return cb(err);
+        else return cb(null, res);
+      });
+    }
+  },
   RSS: {
     search: function(params, cb) {
       searchApi(API_ROOT + 'c/search/rss/' + params.channel, params, function(err, res) {
